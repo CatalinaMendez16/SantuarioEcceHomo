@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Santuario Ecce Homo!</title>
+</head>
+<style>
+    /*estilos de menu principal*/
+    .boton {
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        background-color: white;
+        border-radius: 20px;
+        color: black;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: background-color 0.5s, color 0.3s;
+    }
+
+    .boton:hover {
+        background-color: rgb(145, 25, 89, 255);
+        color: white;
+        transform: scale(1.03);
+    }
+
+    .boton .active {
+        background-color: rgb(145, 25, 89, 255);
+        color: white;
+    }
+
+    /*-----------------------------------------------------*/
+    /*History styles*/
+    .background {
+        background-image: url('https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-historia.jpg?raw=true');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 50px 0;
+    }
+
+    .content {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        font-family: 'Times New Roman', Times, serif;
+        color: black
+    }
+
+    .card-body {
+        background-color: white;
+        /* Fondo de la tarjeta del texto comprimido */
+        color: black;
+    }
+
+    .custom-text,
+    .custom-btn {
+        color: #75263E;
+    }
+
+    .custom-btn {
+        text-decoration: underline;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+    }
+
+
+    /*footer styles*/
+    .footer {
+        background-color: #000000;
+        color: white;
+        padding: 20px 0;
+    }
+
+    .footer .footer-section {
+        margin-bottom: 20px;
+    }
+
+    .footer .footer-section h3 {
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 10px;
+    }
+
+    .footer .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer .footer-section ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer .footer-section ul li a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer .footer-section ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .footer .social-icons {
+        text-align: center;
+    }
+
+    .footer .social-icons a {
+        color: white;
+        margin-right: 10px;
+        font-size: 2em;
+    }
+
+    .footer .social-icons a:hover {
+        color: #007bff;
+    }
+
+    .footer .copyright {
+        text-align: center;
+        padding-top: 10px;
+        border-top: 1px solid #444;
+    }
+
+    .footer .col-lg-4:not(:last-child) {
+        border-right: 1px solid white;
+    }
+    
+            .header {
+                padding: 20px;
+                text-align: left;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            .bg-custom {
+                background-color: #DCD5CA;
+            }
+
+            .line-custom {
+                height: 10px;
+                /* Aumenta el grosor de la línea */
+                background-color: #75263E;
+                width: 100%;
+                /* Asegura que la línea ocupe todo el ancho del contenedor */
+            }
+
+            .embed-responsive-custom {
+                position: relative;
+                display: block;
+                width: 100%;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .embed-responsive-custom::before {
+                display: block;
+                content: "";
+            }
+
+            .embed-responsive-custom-16by9::before {
+                padding-top: 100%;
+                /* Relación de aspecto 1:1 */
+            }
+
+            .embed-responsive-custom .embed-responsive-item {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+
+            .nav-link.active {
+        background-color: #75263E !important; /* Cambiado a color deseado */
+        color: white !important; /* Cambia el color del texto si es necesario */
+}
+       
+
+
+    /*--------------------------------------------------------*/
+</style>
+
+<body>
+    <!--menú-->
+    <nav class="navbar navbar-expand-lg justify-content-center bg-body-tertiary">
+        <div class="container-fluid">
+            <nav class="navbar bg-body-tertiary me-5">
+                <div class="container">
+                    <a class="navbar-brand" href="#">
+                        <img src="https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-logo.png?raw=true"
+                            class="img-fluid" alt="Bootstrap" width="150" height="150">
+                    </a>
+                </div>
+            </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav nav-pills me-auto mb-2 mb-lg-0 justify-content-center">
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="inicio" href="index.html" style="font-size: 20px; border-radius: 20px;">INICIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="sobre_nosotros" href="sobre_nosotros.html" style="font-size: 20px; border-radius: 20px;">SOBRE NOSOTROS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="visitarnos" href="visitanos.html" style="font-size: 20px; border-radius: 20px;">VISITANOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="eventos" href="eventos.html" style="font-size: 20px; border-radius: 20px;">EVENTOS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="donaciones" href="donaciones.html" style="font-size: 20px; border-radius: 20px;">DONACIONES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="boton nav-link me-2" id="contacto" href="contacto.html" style="font-size: 20px; border-radius: 20px;">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script>
+        // Obtener la URL actual
+        const currentUrl = window.location.pathname.split('/').pop();
+    
+        // Seleccionar todos los enlaces del menú
+        const menuItems = document.querySelectorAll('.nav-link');
+    
+        // Recorrer los enlaces y añadir la clase activa al que coincide con la URL actual
+        menuItems.forEach(item => {
+            if (item.getAttribute('href') === currentUrl) {
+                item.classList.add('active');
+            }
+        });
+    </script>
+    <!----------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <!--contenido aqui-->
+    <section class="background">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 content">
+                    <h1 class="text-center custom-text">Historia</h1>
+                    <p>En el Siglo XVIII Rafael Urriago comerciaba con el Chocó y en uno de sus viajes, más allá de
+                        Istmina, en la peña de la Trinidad, acosado por ...</p>
+                    <button class="btn btn-link custom-btn" type="button" data-toggle="collapse" data-target="#moreInfo"
+                        aria-expanded="false" aria-controls="moreInfo">
+                        Leer más
+                    </button>
+                    <div class="collapse" id="moreInfo">
+                        <div class="card card-body mt-3">
+                            <p> En el Siglo XVIII Rafael Urriago comerciaba con el Chocó y en uno de sus viajes, más
+                                allá de Istmina, en la peña de la Trinidad, acosado por la sed se acercó al río y vio en
+                                la orilla una tabla que le causó admiración ya que en ella se percibía una sombra, como
+                                la imagen de un santo. La guardó cuidadosamente y la llevó a su casa de Yegüerizo (era
+                                el antiguo nombre del corregimiento de Ricaurte), y se la obsequió a su tía Manuela para
+                                que la guardara como recuerdo de sus viajes por el Chocó. Su tía Manuela la conservó con
+                                gran esmero, puesto que presentaba una sombra que nadie comprendía y por esta razón fue
+                                guardada con cuidado por quienes la heredaban.
+                            </p>
+                            <p>
+                                Fallecida Manuela Urriago, quedó la tabla en manos de Sixta Cruz, luego la heredó
+                                Mariana Cruz Triviño. Al fallecer ésta, la adquirió su hija Domitila Triviño, quien la
+                                colocó en una repisa. Debido a un temblor la tabla cayó y se rompió en tres pedazos. La
+                                dueña unió los pedazos de la tabla con una costura. La tabla ha soldado de modo
+                                maravilloso (Hoy no hay tal costura, pues la pintura es continua y no son visibles sino
+                                dos líneas transversales que no destruyen la unidad y la belleza de la imagen). La
+                                imagen se hacía cada vez más visible y la gente de los alrededores acudía a conocer el
+                                santo que estaba apareciendo en la casa de Domitila Triviño.
+                            </p>
+                            <p>
+                                A mediados de septiembre del año de 1928, el entonces Obispo de la Diócesis de Cali,
+                                Monseñor Luis Adriano Díaz se dio cuenta de la existencia de esta imagen en Yegüerizo,
+                                por las personas devotas que venían a diario con el fin de conocer el Santo de Yegüerizo
+                                (este fue el primer nombre que tuvo la imagen), y aprovecho una visita pastoral a la
+                                Parroquia de Santa Ana del Pescador (Bolívar, Valle), para conocer esta mencionada
+                                imagen, y confirmar si en realidad era obra de Dios. Al ver en dicha tabla la sombra que
+                                presentaba, constató que en realidad era una imagen que iba apareciendo día tras día y
+                                dijo que era la imagen del Ecce Homo (frase latina que traduce “Aquí tienen al hombre”
+                                Jn. 19, 5-, pronunciada por Pilato ante el pueblo después de haber mandado
+                                azotar a Jesús), e inmediatamente ordenó el traslado de esta imagen de la casa de paja
+                                de la familia García Triviño, donde la veneraban diariamente los peregrinos, a la
+                                Capilla de Nuestra Señora de las Mercedes de Yegüerizo. La imagen en efecto fue
+                                instalada por el mismo Obispo, después de una solemne y concurrida procesión.
+                            </p>
+                            <p>
+                                Cuando en 1962, se creó la Diócesis de Cartago, quedó incluido el territorio de la nueva
+                                diócesis el corregimiento de Ricaurte. En el mismo año 1962 ocurrió un fuerte temblor de
+                                tierra que dejó destruida la capilla de las Mercedes. El párroco de Bolívar se dio a la
+                                tarea de reconstruir con ayudas de los devotos y fieles de la zona, de modo que la
+                                antigua capilla dio lugar al templo que hoy lleva el nombre de Santuario del Divino Ecce
+                                Homo, de Ricaurte, Valle.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!--video-->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <h1 class="text-center mb-4" style="color: #75263E; font-family: 'Times New Roman', Times, serif;">
+                    Trayectoria del divino Ecce Homo
+                </h1>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <div id="video"></div> <!-- Este div será reemplazado por el iframe de YouTube -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Cargar la API de IFrame de YouTube
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('video', {
+                height: '100%', // Cambia la altura aquí
+                width: '100%', // Cambia el ancho aquí
+                videoId: 'i9uV8NSWaoc', // ID del video
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+    
+        function onPlayerReady(event) {
+            var iframe = document.getElementById('video');
+            iframe.addEventListener('mouseover', function () {
+                player.playVideo();
+            });
+            iframe.addEventListener('mouseout', function () {
+                player.pauseVideo();
+            });
+        }
+    </script>
+    
+    <style>
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0; /* Elimina el padding */
+            overflow: hidden;
+            height: 0; /* Altura inicial */
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        }
+    
+        #video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <style>
+        .embed-responsive {
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0; /* Elimina el padding */
+            overflow: hidden;
+            height: 0; /* Altura inicial */
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+        }
+    
+        .embed-responsive-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+
+
+
+    <!--------------------------------------->
+    <div style="height: 20px;"></div>
+    <!--carrusel-->
+
+    <div id="carouselExampleIndicators" class="container carousel slide">
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+                aria-label="Slide 8"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"
+                aria-label="Slide 9"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
+                aria-label="Slide 10"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="10"
+                aria-label="Slide 11"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="11"
+                aria-label="Slide 12"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="12"
+                aria-label="Slide 13"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13"
+                aria-label="Slide 14"></button>
+        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <h1 class="text-center mb-4"
+                    style="color: #75263E; font-family: 'Times New Roman', Times, serif; margin-top: 0; line-height: 1;">
+                    Arquitectura
+                </h1>
+                <div class="carousel-item active">
+                    <img src="https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-arq1.jpg?raw=true"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color: #DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-arq2.jpg?raw=true"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq3.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq4.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq6.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq7.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq8.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq9.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq10.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq11.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq12.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq13.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq14.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq15.jpg"
+                        class="d-block w-100"
+                        style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
+                </div>
+
+
+                <!-- Resto de los items del carrusel -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <!--misión y visión-->
+        <style>
+            h2 {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color: #75263E;
+
+            }
+
+            p {
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+        </style>
+
+<div class="container mt-5" style="font-family: Georgia, 'Times New Roman', Times, serif;">
+    <div class="row text-center mb-4">
+        <div class="col-md-12">
+            <h1 class style="color: #75263E;">Misión y Visión</h1>
+            <hr style="border: 1px solid #75263E; width: 50%; margin: 0 auto;">
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <h2 class="text-center" style="color: #75263E;">Misión</h2>
+            <p class="text-justify" style="line-height: 1.6;">Es tarea fundamental del Santuario acoger con fraternidad y amor a todos los que llegan al santuario en busca de encuentro y en un lugar que se convierta en hogar de descanso y de reconciliación, de encuentro con Cristo Salvador, en la imagen del Divino Ece Homo.</p>
+        </div>
+        <div class="col-md-6 mb-4">
+            <h2 class="text-center" style="color: #75263E;">Visión</h2>
+            <p class="text-justify" style="line-height: 1.6;">El Santuario ha de ser “lugar privilegiado de expresión y contagio de la fe cristiana y religiosidad popular”, lugar de encuentro, lugar de oración. Que el Santuario trata de entregar lo que la Iglesia desea ofrecer: Cristo ofrece el perdón; el perdón ofrece la reconciliación; la reconciliación ofrece la paz.</p>
+        </div>
+    </div>
+</div>
+
+        <!------------------------------------------------------------------------------------------------------------->
+        <!--Nuestro equipo-->
+        <style>
+            .card-img-top {
+                object-fit: cover;
+                height: 200px;
+                border-bottom: 5px solid #75263E;
+                /* Ajusta la altura según sea necesario */
+            }
+
+            .card {
+                background-color:#DCD5CA;
+                /* Color de fondo de las tarjetas */
+                height: 100%;
+                border-radius: 15px;
+                overflow: hidden;
+                transition: transform 0.2s;
+            }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+
+
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .card-text {
+                font-size: 1rem;
+            }
+
+            .card-title {
+                color: #75263E;
+            }
+        </style>
+        </head>
+
+        <body>
+            <div class="container mt-5">
+                <h1 class="text-center mb-4"
+                    style="color: #75263E; font-family: 'Times New Roman', Times, serif; margin-top: 0; line-height: 1;">
+                    Nuestro equipo
+                </h1>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-lg border-light">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Rector.jpg"
+                                class="card-img-top" alt="Rector">
+                            <div class="card-body">
+                                <h5 class="card-title">Rector</h5>
+                                <p class="card-text " style="text-align: justify;">El Padre Fernando Arango es nuestro
+                                    rector y sacerdote
+                                    comprometido
+                                    con más de 20 años de servicio, reconocido por su liderazgo comunitario y su enfoque
+                                    en el amor y la justicia social.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Secretaria.jpeg"
+                                class="card-img-top" alt="Secretaria">
+                            <div class="card-body">
+                                <h5 class="card-title">Secretaria</h5>
+                                <p class="card-text" style="text-align: justify;">Luz Stella Triviño es una secretaria
+                                    con más de 15 años de
+                                    experiencia, clave para nuestras operaciones gracias a su eficiencia, atención al
+                                    detalle, y habilidades en resolución de problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Acolitos.jpg"
+                                class="card-img-top" alt="Acólitos">
+                            <div class="card-body">
+                                <h5 class="card-title">Acólitos</h5>
+                                <p class="card-text" style="text-align: justify;">Los acólitos son jóvenes dedicados que
+                                    apoyan al padre Fernando
+                                    durante las ceremonias, mejorando la experiencia litúrgica y fomentando un ambiente
+                                    de devoción y comunidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Proclamadores%20de%20la%20palabra.jpg"
+                                class="card-img-top" alt="Proclamadores de la palabra">
+                            <div class="card-body">
+                                <h5 class="card-title">Proclamadores de la palabra</h5>
+                                <p class="card-text" style="text-align: justify;">Los proclamadores de la palabra leen
+                                    las Escrituras en las
+                                    celebraciones litúrgicas, ofreciendo una interpretación clara y significativa para
+                                    inspirar y guiar a la comunidad en su vida espiritual.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Sacristan.jpg"
+                                class="card-img-top" alt="Sacristán">
+                            <div class="card-body">
+                                <h5 class="card-title">Sacristán</h5>
+                                <p class="card-text" style="text-align: justify;">El sacristán es el encargado de
+                                    preparar y mantener el espacio de
+                                    culto, asegurando que todo esté en orden para las ceremonias religiosas. Su atención
+                                    al detalle y su dedicación garantizan un entorno digno y reverente para la
+                                    comunidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Gestoras%20del%20comedor.jpg"
+                                class="card-img-top" alt="Gestoras del comedor">
+                            <div class="card-body">
+                                <h5 class="card-title">Gestoras del comedor</h5>
+                                <p class="card-text" style="text-align: justify;">Las gestoras del comedor del santuario
+                                    son responsables de
+                                    organizar y coordinar las comidas para los visitantes y la comunidad. Su dedicación
+                                    asegura un servicio cálido y eficiente, creando un ambiente acogedor y nutritivo
+                                    para todos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!------------------------------------------------------------------------------------------------------------------>
+            <!--Testimonio-->
+            <style>
+                .testimonial-section {
+                    background-color: #DCD5CA;
+                    padding: 30px;
+                    border-radius: 10px;
+                    box-shadow: 0 0 10px black;
+                }
+            
+                .testimonial-text {
+                    font-size: 1.1em;
+                    color: black;
+                }
+            
+                .testimonial-author {
+                    font-style: italic;
+                    color: black;
+                }
+            
+                /* Ocultar los puntos del carrusel */
+                .carousel-indicators {
+                    display: none; /* Esto oculta los puntos */
+                }
+            
+                /* Estilos para las flechas de anterior y siguiente */
+                .carousel-control-prev-icon,
+                .carousel-control-next-icon {
+                    background-image: none;
+                    background-color: transparent;
+                }
+            
+                .carousel-control-prev-icon::after,
+                .carousel-control-next-icon::after {
+                    content: '';
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    border: solid #75263E;
+                    border-width: 0 3px 3px 0;
+                }
+            
+                .carousel-control-prev-icon::after {
+                    transform: rotate(135deg);
+                    margin-left: -3px;
+                }
+            
+                .carousel-control-next-icon::after {
+                    transform: rotate(-45deg);
+                    margin-right: -3px;
+                }
+            
+                .carousel-control-prev .sr-only,
+                .carousel-control-next .sr-only {
+                    display: none;
+                }
+            
+                /* Ajustar la posición de las flechas */
+                .carousel-control-prev,
+                .carousel-control-next {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 5%;
+                }
+            
+                .carousel-control-prev {
+                    left: 0;
+                }
+            
+                .carousel-control-next {
+                    right: 0;
+                }
+            </style>
+            </head>
+
+            <body>
+                <div class="container mt-5">
+                    <h2 class="text-center mb-4">Testimonios</h2>
+                    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">Quiero agradecer a todos los peregrinos que nos han
+                                        visitado durante el último año, y en especial a aquellos que nos han dejado sus
+                                        testimonios o mensajes en el libro que hemos colocado con tal fin el centro de
+                                        atención al peregrino de nuestro Santuario (Ricaurte). Me he permitido extraer
+                                        algunos testimonios que, creo que para muchos, como para mí, nos ayudan a
+                                        fortalecer nuestra confianza en el Dios fiel y misericordioso, que en Cristo
+                                        sufriente, como lo muestra la imagen del Divino Ecce Homo, nos mira con ojos
+                                        atentos para recordarnos que Él nunca nos desampara o ni deja solos. Estas
+                                        líneas sean leídas con ojos de fe, más que de curiosidad. Dios les bendiga</p>
+                                    <p class="testimonial-author">P. Carlos S., Rector del Santuario.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Yo Alba Lucía Vallejo, de la ciudad de Armenia, un día,
+                                        sin saber quién era el Divino Ecce Homo, me trajo una tía de Ibagué y en esos
+                                        momentos estaba a punto de perder algo material, pero me preocupaba, porque
+                                        desconfiaba del poder salir adelante con lo que Dios me había dado, pero el
+                                        Divino Ecce Homo me abrió la esperanza de que lo que Dios me había dado, nadie
+                                        me lo quitaría, sino sólo Dios. Y pude deshipotecar la casa. Ahora somos una
+                                        familia llena de amor para con los demás hermanos y reina sobretodo el amor a
+                                        Dios y sabemos que si le pedimos con fe, Él todo nos lo da” </p>
+                                    <p class="testimonial-author">(Agosto 28 de 2010)</p>
+                                </div>
+                            </div>
+                            <!-- Añadir 8 testimonios más aquí -->
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text"> “Yo hice la petición y comulgué para que mi tío y mi
+                                        tía tuvieran un bebé y al año de hacer la petición se me cumplió, porque vino un
+                                        bebé lindo. Gracias Padre Santo!.</p>
+                                    <p class="testimonial-author">Santiago Vargas, de Yumbo” (Agosto 28 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Divino Ecce Homo, gracias por haberme concedido la
+                                        salud de mi brazo derecho, ya que estuve en tratamiento por más de 4 años y en
+                                        la visita de hace 2 años para semana santa, lo invoqué con mucha fe y quede sana
+                                        por completo; vengo desde Armenia, Quindío.</p>
+                                    <p class="testimonial-author">Marleny Montenegro” (Agosto 29 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“En 1989 un hijo fue curado del corazón, ataques. Hoy
+                                        tiene 36 años y es completamente sano; hoy vine de nuevo a darle gracias,
+                                        gracias Padre Bueno.</p>
+                                    <p class="testimonial-author">Libia Amparo Valencia” (Agosto 29 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“El Divino Ecce Homo es mi protector y de toda mi
+                                        familia, y ene special de mi hijo Juan David Santamaría, que de dos meses de
+                                        nacido le dio meningitis o hidrocefalia, se lo encomendé al Divino Ecce homo y
+                                        que hiciera su voluntad, y lo curó, me lo salvó y hoy es un profesional egresado
+                                        de la universidad del Valle. Y todo lo que le pido me lo concede. Gracias a
+                                        Dios!”</p>
+                                    <p class="testimonial-author">(Gloria Enelia Mesa, Septiembre 4 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Divino Ecce Homo, mismísimo Hijo de Dios Verdadero, te
+                                        doy gracias por escuchar las súplicas de mi esposa para que yo me aleje de la
+                                        drogadicción; es tanta la mejoría que vengo personalmente a darte gracias y
+                                        confirmarte una vez más que nunca quiero separarme de ti, Señor” </p>
+                                    <p class="testimonial-author">(Ricardo Moncayo, Octubre 17 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Gracias inmensas al Divino Ecce Homo, de Ricaurte
+                                        –Valle- por la salud y bienestar de Wilson Romo Bravo, que se sanó de una
+                                        enfermedad mortal; los médicos del Seguro Social le dieron un mes de vida, y de
+                                        eso hace once años, y ha visto crecer a sus dos hijas; y trabaja y lucha día a
+                                        día por su familia. Sólo Dios sana y tiene contados todos nuestros cabellos.
+                                        Ahora la familia somos más creyentes y empezamos el proceso de conversión,
+                                        porque a veces tenemos que tropezarnos y que nos duela para ver hacia arriba,
+                                        hacia Dios que es el Salvador y el Camino, Verdad y Vida para todos nosotros.
+                                        Amén” </p>
+                                    <p class="testimonial-author">(Diciembre 26 de 2010)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Yo, Alicia Saa Zamorano, doy gracias a Dios por haberme
+                                        devuelto mi salud; pues me curó de unos tumores al cerebro. Gracias a Dios y a
+                                        María Santísima por todo lo que nos das” </p>
+                                    <p class="testimonial-author">(Marzo 20 de 2011)</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-section">
+                                    <p class="testimonial-text">“Diego de Jesús Quintero Chavarriaga (… de Antioquia),
+                                        doy mi testimonio con toda certeza que el Divino Ecce Homo, cuando estuve preso
+                                        en la cárcel de Bellavista, en la ciudad de Medellín. Lo invoqué con todo mi
+                                        corazón desde las celdas de la cárcel y le prometí que cuando estuviera en
+                                        libertad vendría a este lugar a pagarle una promesa. No había podido cumplirla
+                                        por mi situación económica, y el Señor Todopoderoso puso en mi camino a un Señor
+                                        R. Preciado Z., que me colaboró y me trajo en su carro. Les cuento que estuve
+                                        preso durante 33 meses, sindicado por delito que no había cometido, donde se me
+                                        leía una condena de cuarenta años de prisión en caso de que me hallaran culpable
+                                        a mí y a otros tres compañeros de causa. Invoqué al Espíritu Santo y al Dios
+                                        Todopoderoso y a su Hijo Jesucristo, como mi abogado y todos salimos libres.
+                                        Porque ningún abogado aquí en la tierra es como nuestro Dios, mejor confiar en
+                                        Él que en el hombre” </p>
+                                    <p class="testimonial-author">(Marzo 20 de 2011)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Anterior</span>
+                        </a>
+                        <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Siguiente</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div style="height: 20px;"></div>
+            </div>
+
+                
+                <!--footer-->
+                <footer class="footer">
+                    <div class="container mt-4">
+                        <div class="row">
+                            <div class="col-lg-4 footer-section">
+                                <h3 class="text-center">NUESTRA IGLESIA</h3>
+                                <p class="text-center">En el santuario de Ecce Homo encontraras la paz que buscas,
+                                    ,amifestada en el
+                                    amor de Dios.</p>
+                            </div>
+                            <div class="col-lg-4 footer-section">
+                                <h3 class="text-center">DIRECCIÓN</h3>
+                                <p class="text-center">Parque principal Ricaurte, Bolivar Valle</p>
+                                <p class="text-center">Correo electrónico: santuariodeldivino@gmail.com</p>
+                                <p class="text-center">Teléfono: +57 3170740207 </p>
+                            </div>
+                            <div class="col-lg-4 footer-section">
+                                <h3 class="text-center">REDES SOCIALES</h3>
+                                <div class="social-icons">
+                                    <a href="https://web.facebook.com/santuariodeldivino/photos?locale=es_LA&_rdc=1&_rdr"
+                                        target="_blank">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-facebook">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z">
+                                            </path>
+                                        </svg>
+                                        <!-- Puedes agregar más iconos de redes sociales aquí -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <p class="text-center">&copy; 2024 Santuario del Divino Ecce Homo. Todos los derechos
+                            reservados.</p>
+                    </div>
+                </footer>
+                <!------------------------------------------------------------------------------------------------------------->
+                
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                    crossorigin="anonymous"></script>
+
+                <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+                <!------------->
+            
+
+</html>
