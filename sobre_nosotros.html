@@ -37,7 +37,7 @@
     }
 
     /*-----------------------------------------------------*/
-    /*History styles*/
+    /*Estilos de la historia*/
     .background {
         background-image: url('https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-historia.jpg?raw=true');
         background-size: cover;
@@ -180,14 +180,12 @@
                 border: 0;
             }
 
+/*Color del botón de navegación */
             .nav-link.active {
         background-color: #75263E !important; /* Cambiado a color deseado */
         color: white !important; /* Cambia el color del texto si es necesario */
 }
-       
-
-
-    /*--------------------------------------------------------*/
+/*--------------------------------------------------------*/
 </style>
 
 <body>
@@ -231,6 +229,9 @@
             </div>
         </div>
     </nav>
+<!--Fin del menú--------->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------->
+<!--Asegura de que el botón seleccionado permanezca presionado para indicar nuestra ubicación-->
     <script>
         // Obtener la URL actual
         const currentUrl = window.location.pathname.split('/').pop();
@@ -247,7 +248,7 @@
     </script>
     <!----------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <!--contenido aqui-->
+    <!--Historia-->
     <section class="background">
         <div class="container">
             <div class="row justify-content-center">
@@ -308,10 +309,11 @@
                 </div>
             </div>
         </div>
-
     </section>
+<!--Fin de la sección de la historia-->
+<!----------------------------------------------------------------------------------------------------------------------------------------------------->
 
-    <!--video-->
+ <!--video-->
     <div class="container mt-4">
         <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
@@ -325,8 +327,8 @@
         </div>
     </div>
     
+<!--Cargar la API de IFrame de YouTube-->
     <script>
-        // Cargar la API de IFrame de YouTube
         var tag = document.createElement('script');
         tag.src = "https://www.youtube.com/iframe_api";
         var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -354,8 +356,11 @@
             });
         }
     </script>
+    <!----------------------------------------------------------------------------------------------------------------------------------------------------->
     
     <style>
+
+    /* Estilos para el video*/
         .embed-responsive {
             position: relative;
             display: block;
@@ -373,6 +378,7 @@
             width: 100%;
             height: 100%;
         }
+    /*---------------*/
     </style>
     
     <style>
@@ -398,13 +404,14 @@
 
 
 
-    <!--------------------------------------->
+    <!--Este código es para que se separe de la sección de arquitectura-->
     <div style="height: 20px;"></div>
-    <!--carrusel-->
+
+    <!--carrusel de arquitectura-->
 
     <div id="carouselExampleIndicators" class="container carousel slide">
         <div class="carousel-indicators">
-
+<!--indicadores de la cantidad de secciones que va a tener el carrusel-->
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
@@ -434,44 +441,51 @@
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="13"
                 aria-label="Slide 14"></button>
         </div>
+
+<!--Aqui se ponen las imágenes del carrusel-->
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
             <div class="carousel-inner">
                 <h1 class="text-center mb-4"
                     style="color: #75263E; font-family: 'Times New Roman', Times, serif; margin-top: 0; line-height: 1;">
                     Arquitectura
                 </h1>
+<!--Primera imagen del carrusel-->
                 <div class="carousel-item active">
                     <img src="https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-arq1.jpg?raw=true"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color: #DCD5CA;" alt="...">
                 </div>
+<!--segunda imagen del carrusel-->
                 <div class="carousel-item">
                     <img src="https://github.com/CatalinaMendez16/SantuarioEcceHomo/blob/main/Santuario/Imagenes/Img-arq2.jpg?raw=true"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
                 </div>
+<!--Tercera imagen del carrusel-->
                 <div class="carousel-item">
                     <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq3.jpg"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
                 </div>
+<!--Cuarta imagen del carrusel-->
                 <div class="carousel-item">
                     <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq4.jpg"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
                 </div>
-
+<!--Quinta imagen del carrusel-->
                 <div class="carousel-item">
                     <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq6.jpg"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
                 </div>
-
+<!--Sexta imagen del carrusel-->
                 <div class="carousel-item">
                     <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq7.jpg"
                         class="d-block w-100"
                         style="width: 100%; height: 500px; object-fit: contain; background-color:#DCD5CA;" alt="...">
                 </div>
+<!--Séptima imagen del carrusel-->
 
                 <div class="carousel-item">
                     <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Img-arq8.jpg"
@@ -557,11 +571,11 @@
     <div class="row">
         <div class="col-md-6 mb-4">
             <h2 class="text-center" style="color: #75263E;">Misión</h2>
-            <p class="text-justify" style="line-height: 1.6;">Es tarea fundamental del Santuario acoger con fraternidad y amor a todos los que llegan al santuario en busca de encuentro y en un lugar que se convierta en hogar de descanso y de reconciliación, de encuentro con Cristo Salvador, en la imagen del Divino Ece Homo.</p>
+            <p class="text-justify" style="line-height: 1.6;">Es tarea fundamental del Santuario acoger fraternalmente a todo el que llega a él y hacerle ver que se encuentra en un lugar de oración y de recogimiento, de encuentro con Cristo Salvador, en la imagen del Divino Ecce Homo.</p>
         </div>
         <div class="col-md-6 mb-4">
             <h2 class="text-center" style="color: #75263E;">Visión</h2>
-            <p class="text-justify" style="line-height: 1.6;">El Santuario ha de ser “lugar privilegiado de expresión y contagio de la fe cristiana y religiosidad popular”, lugar de encuentro, lugar de oración. Que el Santuario trata de entregar lo que la Iglesia desea ofrecer: Cristo ofrece el perdón; el perdón ofrece la reconciliación; la reconciliación ofrece la paz.</p>
+            <p class="text-justify" style="line-height: 1.6;">El Santuario ha de ser “lugar privilegiado de la expresión y evangelización de la religiosidad popular”, lugar de oración. El Santuario trata de entregar lo que la Iglesia en nombre de Cristo ofrece al peregrino: la palabra, la oración y el perdón.</p>
         </div>
     </div>
 </div>
@@ -654,8 +668,8 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Proclamadores%20de%20la%20palabra.jpg"
-                                class="card-img-top" alt="Proclamadores de la palabra">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Proclamadores.jpeg"
+                                class="card-img-top" alt="Proclamadores">
                             <div class="card-body">
                                 <h5 class="card-title">Proclamadores de la palabra</h5>
                                 <p class="card-text" style="text-align: justify;">Los proclamadores de la palabra leen
@@ -711,8 +725,8 @@
 
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Proclamadores%20de%20la%20palabra.jpg"
-                                class="card-img-top" alt="Gestoras del comedor">
+                            <img src="https://raw.githubusercontent.com/CatalinaMendez16/SantuarioEcceHomo/main/Santuario/Imagenes/Coro.jpeg"
+                                class="card-img-top" alt="Coro">
                             <div class="card-body">
                                 <h5 class="card-title">Coro</h5>
                                 <p class="card-text" style="text-align: justify;">El Coro enriquece las celebraciones
